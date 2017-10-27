@@ -87,12 +87,13 @@ class InputStream
             $value = $parameters[++$index];
         }
         $option = $config->getOption($name);
-        if ($option->isRequired() && null === $value) {
-            throw new RequiredParameterException('-' . $name);
-        }
 
         if (null !== $option->getDefault() && null === $value) {
             $value = $option->getDefault();
+        }
+
+        if ($option->isRequired() && null === $value) {
+            throw new RequiredParameterException('-' . $name);
         }
 
         $this->values[$name] = $value;
@@ -105,12 +106,12 @@ class InputStream
      */
     private function parseParameter($value, ConfigParameter $config)
     {
-        if ($config->isRequired() && null === $value) {
-            throw new RequiredParameterException($config->getName());
-        }
-
         if (null !== $config->getDefault() && null === $value) {
             $value = $config->getDefault();
+        }
+
+        if ($config->isRequired() && null === $value) {
+            throw new RequiredParameterException($config->getName());
         }
 
         $this->values[$config->getName()] = $value;

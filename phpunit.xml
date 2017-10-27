@@ -12,5 +12,10 @@
     <testsuite name="TestSuite">
         <directory>./test/</directory>
     </testsuite>
+    <filter>
+        <whitelist>
+            <directory>./src/Impero</directory>
+        </whitelist>
+    </filter>
 
 </phpunit>

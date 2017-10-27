@@ -19,7 +19,6 @@ namespace Impero;
  */
 class CommandConfig
 {
-
     /**
      * @var string
      */

@@ -71,6 +71,7 @@ class CommandAsset implements CommandInterface
     /**
      * @param InputStream $in
      * @param OutputStream $out
+     * @return int|void
      */
     public function doExecute(InputStream $in, OutputStream $out)
     {
